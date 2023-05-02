@@ -4,8 +4,8 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
         <header className='bg-base-200'>
-            <div className='my-container'>
-                <div className='relative flex items-center justify-between'>
+            <div className='my-container '>
+                <div className='flex items-center justify-between'>
                     <Link
                         to='/'
                         aria-label='Master-chef'
@@ -13,7 +13,7 @@ const Header = () => {
                         className='inline-flex items-center'
                     >
                         <span className='ml-2 inline-flex items-center text-2xl font-bold tracking-wide text-gray-800 '>
-                        <img src="https://img.icons8.com/plasticine/60/null/codechef.png"/>
+                            <img src="https://img.icons8.com/plasticine/60/null/codechef.png" />
                             <span className='text-red-600'>MASTER</span>CHEF
                         </span>
                     </Link>
