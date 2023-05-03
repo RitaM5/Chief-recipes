@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 const RecipeDetails = ({ detail }) => {
-    console.log(detail);
+    //console.log(detail);
     const [select, setSelected] = useState(false);
     const { id, name, image, ingredients, cooking_method, rating } = detail;
     const addTOFavorite = () => {
