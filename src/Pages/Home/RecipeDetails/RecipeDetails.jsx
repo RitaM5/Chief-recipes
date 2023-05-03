@@ -41,8 +41,3 @@ const RecipeDetails = ({ detail }) => {
 };
 
 export default RecipeDetails;
-/* 
-       <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
-                </div>
-*/
