@@ -7,7 +7,6 @@ const ViewRecipe = () => {
     return (
         <div>
             <Header></Header>
-       
             <div className='md:min-h-[calc(100vh-341px)]'>
                 <Outlet />
             </div>

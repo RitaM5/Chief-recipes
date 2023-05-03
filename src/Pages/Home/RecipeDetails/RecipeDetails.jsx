@@ -23,7 +23,7 @@ const RecipeDetails = ({ detail }) => {
                     <ul className='w-full lg:ms-16 md:ms-12'>
                         <li className='font-semibold'>Ingredients:</li>
                         {
-                            ingredients.map(data => <li style={{ fontSize: "13px" }} className=''>{data}</li>
+                            ingredients.map((data,index) => <li key={index} style={{ fontSize: "13px" }} className=''>{data}</li>
                             )
                         }
                     </ul>
