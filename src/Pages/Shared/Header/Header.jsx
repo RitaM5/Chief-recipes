@@ -4,7 +4,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
         <header className='bg-base-200'>
-            <div className='my-container '>
+            <div className='my-container'>
                 <div className='flex items-center justify-between'>
                     <Link
                         to='/'
