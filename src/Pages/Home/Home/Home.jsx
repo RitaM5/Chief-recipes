@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 import HomeBanner from '../../Shared/HomeBanner/HomeBanner';
+import About from '../About/About';
 
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
     return (
         <>
             <HomeBanner></HomeBanner>
-            <div className='my-container my-6'>
+            <div className='my-container my-4'>
                 <h2 className='text-center text-red-600 text-3xl font-semibold'>Meet Our Chef</h2>
                 <div className=' my-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1'>
                     {
@@ -25,6 +26,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <About></About>
         </>
     );
 };

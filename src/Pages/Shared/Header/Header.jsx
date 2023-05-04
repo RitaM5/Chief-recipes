@@ -38,16 +38,6 @@ const Header = () => {
                         </li>
                         <li>
                             <NavLink
-                                to='/about'
-                                aria-label='About'
-                                title='About'
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >
-                                About
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
                                 to='/blog'
                                 aria-label='Blog'
                                 title='Blog'
@@ -153,16 +143,6 @@ const Header = () => {
                                                     className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                                 >
                                                     Home
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to='/about'
-                                                    aria-label='About'
-                                                    title='About'
-                                                    className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                                >
-                                                    About
                                                 </Link>
                                             </li>
                                             <li>

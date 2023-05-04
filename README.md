@@ -2,7 +2,7 @@
 
 ---
 
-## Live Site Link: []()
+## Live Site Link: [https://chef-recipe-client-4ef9b.web.app/](https://chef-recipe-client-4ef9b.web.app/)
 
 ### Project Overview
 1. This is Korean food recipes and chefs single page web application.
