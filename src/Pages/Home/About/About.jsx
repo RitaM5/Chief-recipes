@@ -1,10 +1,12 @@
 import React from 'react';
-
+import Marquee from "react-fast-marquee";
 const About = () => {
     return (
         <div className='my-container'>
             <h1 className='text-red-600 text-3xl font-semibold text-center'>Our Chef Recommend</h1>
+            <Marquee>
             <p className='text-center font-semibold text-lg my-4'>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation.</p>
+            </Marquee>
             <div className="my-12 grid grid-cols-1 lg:grid-cols-6 md:grid-cols-2 gap-5 py-4 px-6 bg-lime-200 rounded-box">
                 <div className="carousel-item card w-full">
                     <figure>

@@ -4,7 +4,6 @@ import { AuthContext } from '../../../Providers/AuthProviders';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext);
-    //console.log(user.photoURL);
     const handleLogOut = () => {
         logOut()
             .then()
@@ -49,24 +48,29 @@ const Header = () => {
                     </ul>
                     <div className='flex gap-2'>
                         {
-                            user && <img className='w-10 rounded-full md:hidden hidden lg:block' src={user.photoURL
+                            user && <p className='tooltip' data-tip={user.displayName} >
+                                <img className='w-10 rounded-full md:hidden hidden lg:block' src={user.photoURL
                             } alt='user image' ></img>
+                            </p>
                         }
                         {
-                            user ? <button onClick={handleLogOut} className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                            user ? <button onClick={handleLogOut} className='bg-blue-900 py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
                                 SignOut
                             </button> :
                                 <Link to="/login">
-                                    <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                                    <button className='bg-blue-900 py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
                                         SignIn
                                     </button>
                                 </Link>
                         }
-                        <Link to="/register">
-                            <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
-                                SignUp
-                            </button>
-                        </Link>
+                        {
+                            user ? '' :
+                                <Link to="/register">
+                                    <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                                        SignUp
+                                    </button>
+                                </Link>
+                        }
 
                     </div>
                     <div className='lg:hidden'>
@@ -151,22 +155,25 @@ const Header = () => {
                                                     }></img>
                                                 }
                                                 {
-                                                    user ? <button onClick={handleLogOut} className='bg-[#7E90FE] py-2 px-4 text-white mt-3 rounded-md'>
+                                                    user ? <button onClick={handleLogOut} className='bg-blue-900 py-2 px-4 text-white mt-3 rounded-md'>
                                                         SignOut
                                                     </button> :
                                                         <Link to="/login">
-                                                            <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md mt-3'>
+                                                            <button className='bg-blue-900 py-2 px-4 text-white rounded-md mt-3'>
                                                                 SignIn
                                                             </button>
                                                         </Link>
                                                 }
                                             </li>
                                             <li>
-                                                <Link to="/register">
-                                                    <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md'>
-                                                        SignUp
-                                                    </button>
-                                                </Link>
+                                                {
+                                                    user ? '' :
+                                                        <Link to="/register">
+                                                            <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md'>
+                                                                SignUp
+                                                            </button>
+                                                        </Link>
+                                                }
                                             </li>
                                         </ul>
                                     </nav>

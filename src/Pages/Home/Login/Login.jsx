@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProviders';
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
-    // console.log(location);
+     console.log(location);
     const from = location.state?.from?.pathname || '/';
     const handleLogIn = (event) => {
         event.preventDefault();
@@ -29,7 +29,7 @@ const Login = () => {
     //goole sign in
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(() => {
+            .then((result) => {
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -48,11 +48,12 @@ const Login = () => {
     }
     return (
         <div className='my-16 my-container'>
-            <div className="card w-96 mx-auto bg-slate-300">
+      <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
+      <div className="card w-full bg-slate-300">
                 <div className="card-body" >
                     <form onSubmit={handleLogIn}>
-                        <input name="email" type="email" placeholder="email" className="input w-full max-w-xs" required />
-                        <input name="password" type="password" placeholder="password" className="input mt-2 w-full max-w-xs" required />
+                        <input name="email" type="email" placeholder="email" className="input w-full " required />
+                        <input name="password" type="password" placeholder="password" className="input mt-2 w-full" required />
                         <input className="mt-3 w-full btn btn-primary" type="submit" value="LogIn" required />
                         {
                             error && <p className='text-red-500 font-semibold mt-2'>Error: {error}</p>
@@ -63,6 +64,7 @@ const Login = () => {
                     <p className='mt-1'><small className='font-semibold' style={{ fontSize: "14px" }}>Don't Have an Account ?</small> <Link to="/register" className=' underline text-green-600'>Please SignUp</Link></p>
                 </div>
             </div>
+      </div>
         </div>
     );
 };

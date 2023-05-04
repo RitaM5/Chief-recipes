@@ -18,7 +18,7 @@ const Blog = () => {
                 </ReactToPdf>
             </div>
             <div ref={ref} style={{ width: "100%", height: "100%" }}>
-                <h1 className='text-center my-6 text-3xl text-red-600 font-semibold'>Know Something New</h1>
+                <h1 className='text-center my-6 text-3xl text-red-600 font-semibold'></h1>
                 <div className="card card-side grid grid-cols-1 gap-5 bg-gray-400 shadow-xl py-10 px-5 my-12">
                     <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
                         <div className="collapse-title text-xl font-medium">
