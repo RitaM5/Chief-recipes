@@ -4,7 +4,7 @@ import { AuthContext } from '../../../Providers/AuthProviders';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext);
-    //console.log(user);
+    //console.log(user.photoURL);
     const handleLogOut = () => {
         logOut()
             .then()
@@ -22,7 +22,7 @@ const Header = () => {
                     >
                         <span className='ml-2 inline-flex items-center text-2xl font-bold tracking-wide text-gray-800 '>
                             <img src="https://img.icons8.com/plasticine/60/null/codechef.png" />
-                            <span className='text-red-600'>MASTER</span>CHEF
+                            <span className='text-red-600'>FOOD</span>VALLY
                         </span>
                     </Link>
                     <ul className='items-center hidden space-x-8 lg:flex'>
@@ -123,7 +123,7 @@ const Header = () => {
                                                 className='inline-flex items-center'
                                             >
                                                 <span className=' text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                                                    <span className='text-red-600'>Master</span>Chef
+                                                    <span className='text-red-600'>Food</span>Vally
                                                 </span>
                                             </Link>
                                         </div>
