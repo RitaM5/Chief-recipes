@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProviders';
 
 const Login = () => {
-    const { signIn, signInWithGithub, googleSignIn } = useContext(AuthContext);
+    const { signIn, signInWithGithub, googleSignIn, user } = useContext(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
@@ -18,19 +18,17 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                form.reset();
-                navigate(from, { replace: true })
+                form.reset();              
             })
             .catch(error => {
                 setError("Password/Email didn't match.");
             })
     }
-
     //goole sign in
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                navigate(from, { replace: true });
+              
             })
             .catch(error => {
                 setError(error.message)
@@ -40,12 +38,17 @@ const Login = () => {
     const handleGithubSignIn = () => {
         signInWithGithub()
             .then(() => {
-                navigate(from, { replace: true });
+            
             })
             .catch(error => {
                 setError(error.message)
             })
     }
+    useEffect(() =>{
+        if(user){
+            navigate(from)
+        }
+    },[user]);
     return (
         <div className='my-16 my-container'>
       <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
