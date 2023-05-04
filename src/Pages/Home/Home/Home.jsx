@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 import HomeBanner from '../../Shared/HomeBanner/HomeBanner';
 import About from '../About/About';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
@@ -27,6 +28,7 @@ const Home = () => {
                 </div>
             </div>
             <About></About>
+            <Contact></Contact>
         </>
     );
 };

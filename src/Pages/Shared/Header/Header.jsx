@@ -46,16 +46,6 @@ const Header = () => {
                                 Blog
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to='/contact'
-                                aria-label='Contact'
-                                title='Contact'
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
                     </ul>
                     <div className='flex gap-2'>
                         {
@@ -153,16 +143,6 @@ const Header = () => {
                                                     className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                                 >
                                                     Blog
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to='/contact'
-                                                    aria-label='Contact'
-                                                    title='Contact'
-                                                    className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                                                >
-                                                    Contact
                                                 </Link>
                                             </li>
                                             <li>
