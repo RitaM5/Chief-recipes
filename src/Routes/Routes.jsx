@@ -6,6 +6,7 @@ import ViewRecipe from "../Layouts/ViewRecipe";
 import Chef from "../Pages/Home/Chef/Chef";
 import Login from "../Pages/Home/Login/Login";
 import Register from "../Pages/Home/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,11 +19,11 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/login',
+                path: 'login',
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: 'register',
                 element: <Register></Register>
             }
         ]
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ':id',
-                element: <Chef></Chef>,
+                element: <PrivateRoute><Chef></Chef></PrivateRoute>,
                 loader: ({params}) => fetch(`https://chef-recipe-server-rita5cmt1b108514-gmailcom.vercel.app/recipe/${params?.id}`)
             },
         ]

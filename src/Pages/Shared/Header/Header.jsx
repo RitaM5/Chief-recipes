@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProviders';
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+    //console.log(user);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
     return (
         <header className='bg-base-200'>
             <div className='my-container'>
@@ -59,9 +67,28 @@ const Header = () => {
                             </NavLink>
                         </li>
                     </ul>
-                    <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
-                        LogIn
-                    </button>
+                    <div className='flex gap-2'>
+                        {
+                            user && <img className='w-10 rounded-full md:hidden hidden lg:block' src={user.photoURL
+                            }></img>
+                        }
+                        {
+                            user ? <button onClick={handleLogOut} className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                                SignOut
+                            </button> :
+                                <Link to="/login">
+                                    <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                                        SignIn
+                                    </button>
+                                </Link>
+                        }
+                        <Link to="/register">
+                            <button className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
+                                SignUp
+                            </button>
+                        </Link>
+
+                    </div>
                     <div className='lg:hidden'>
                         <button
                             aria-label='Open Menu'
@@ -159,9 +186,27 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md'>
-                                                    LogIn
-                                                </button>
+                                                {
+                                                    user && <img className='w-10 rounded-full ' src={user.photoURL
+                                                    }></img>
+                                                }
+                                                {
+                                                    user ? <button onClick={handleLogOut} className='bg-[#7E90FE] py-2 px-4 text-white mt-3 rounded-md'>
+                                                        SignOut
+                                                    </button> :
+                                                        <Link to="/login">
+                                                            <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md mt-3'>
+                                                                SignIn
+                                                            </button>
+                                                        </Link>
+                                                }
+                                            </li>
+                                            <li>
+                                                <Link to="/register">
+                                                    <button className='bg-[#7E90FE] py-2 px-4 text-white rounded-md'>
+                                                        SignUp
+                                                    </button>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </nav>

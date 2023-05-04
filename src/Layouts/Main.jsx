@@ -9,7 +9,6 @@ const Main = () => {
     return (
         <div className=''>
             <Header></Header>
-            <HomeBanner></HomeBanner>
             <div className='md:min-h-[calc(100vh-341px)]'>
                 <Outlet />
             </div>
