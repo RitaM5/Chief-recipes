@@ -70,7 +70,7 @@ const Header = () => {
                     <div className='flex gap-2'>
                         {
                             user && <img className='w-10 rounded-full md:hidden hidden lg:block' src={user.photoURL
-                            }></img>
+                            } alt='user image' ></img>
                         }
                         {
                             user ? <button onClick={handleLogOut} className='bg-[#7E90FE] py-2 px-4 md:hidden hidden lg:block text-white rounded-md'>
