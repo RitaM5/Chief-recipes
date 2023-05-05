@@ -22,8 +22,8 @@ const ChefCard = ({ chef }) => {
                     <p>{years_of_experience} years experience</p>
                     <p>{num_recipes} recipes</p>
                     <p>{likes} likes***</p>
-                    <Rating className=' text-orange-300'
-                        placeholderRating={rating?.number}
+                    <Rating className='text-orange-300'
+                        placeholderRating={rating}
                         readonly
                         emptySymbol={<FaRegStar ></FaRegStar>}
                         placeholderSymbol={<FaStar></FaStar>}

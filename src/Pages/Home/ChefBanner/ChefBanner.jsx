@@ -29,13 +29,12 @@ const ChefBanner = ({ recipeDetails }) => {
                             <li><span className='font-semibold'>Experience:</span>   {years_of_experience}<small>years</small></li>
                         </ul>
                         <Rating className=' text-orange-300'
-                            placeholderRating={rating.number}
+                            placeholderRating={rating}
                             readonly
                             emptySymbol={<FaRegStar ></FaRegStar>}
                             placeholderSymbol={<FaStar></FaStar>}
                             fullSymbol={<FaStar></FaStar>}
                         ></Rating>
-                        {/*       <button className='bg-[#9873FF] rounded-md text-white text-sm py-2 px-3'>Get Started</button> */}
                     </div>
 
                 </div>
