@@ -50,7 +50,7 @@ const Login = () => {
         }
     }, [user]);
     return (
-        <div className='my-16 my-container'>
+        <div className='mt-3 mb-20 my-container'>
             <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
                 <h1 className='text-left text-4xl font-bold text-slate-500 my-5'>Login</h1>
                 <div className="card w-full bg-slate-300">

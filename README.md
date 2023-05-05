@@ -18,5 +18,6 @@
 3. Tailwind 
 4. React-hot-toast
 5. React Icon, Icon8
-6. React Awesome & React pdf
-7. Firebase
+6. Lazyload & React pdf
+7. AOS Animation
+8. Firebase Authentication
