@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+
+
 const RecipeDetails = ({ detail }) => {
     //console.log(detail);
     const [select, setSelected] = useState(false);
@@ -11,7 +13,7 @@ const RecipeDetails = ({ detail }) => {
         setSelected(true);
     }
     return (
-        <div className="card card-side bg-base-100 w-full shadow-xl grid lg:grid-cols-12 sm:grid-cols-1">
+        <div className="card card-side bg-base-100 w-full shadow-xl grid lg:grid-cols-12 sm:grid-cols-1" data-aos="fade-right">
             <div className='lg:col-span-3 flex justify-center items-center   lg:origin-center lg:rotate-45  mx-auto'>
                 <figure><img src={image} alt="" className='rounded-lg w-full' /></figure>
             </div>

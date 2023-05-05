@@ -7,7 +7,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
-     console.log(location);
+    console.log(location);
     const from = location.state?.from?.pathname || '/';
     const handleLogIn = (event) => {
         event.preventDefault();
@@ -18,7 +18,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                form.reset();              
+                form.reset();
             })
             .catch(error => {
                 setError("Password/Email didn't match.");
@@ -28,7 +28,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-              
+
             })
             .catch(error => {
                 setError(error.message)
@@ -38,36 +38,37 @@ const Login = () => {
     const handleGithubSignIn = () => {
         signInWithGithub()
             .then(() => {
-            
+
             })
             .catch(error => {
                 setError(error.message)
             })
     }
-    useEffect(() =>{
-        if(user){
+    useEffect(() => {
+        if (user) {
             navigate(from)
         }
-    },[user]);
+    }, [user]);
     return (
         <div className='my-16 my-container'>
-      <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
-      <div className="card w-full bg-slate-300">
-                <div className="card-body" >
-                    <form onSubmit={handleLogIn}>
-                        <input name="email" type="email" placeholder="email" className="input w-full " required />
-                        <input name="password" type="password" placeholder="password" className="input mt-2 w-full" required />
-                        <input className="mt-3 w-full btn btn-primary" type="submit" value="LogIn" required />
-                        {
-                            error && <p className='text-red-500 font-semibold mt-2'>Error: {error}</p>
-                        }
-                    </form>
-                    <button onClick={handleGoogleSignIn} className="btn btn-active btn-accent"><img src="https://img.icons8.com/color/30/undefined/google-logo.png" /> <span className='text-white'> Google</span></button>
-                    <button onClick={handleGithubSignIn} className='btn' type="submit"><img src="https://img.icons8.com/arcade/30/null/github.png" /> Github</button>
-                    <p className='mt-1'><small className='font-semibold' style={{ fontSize: "14px" }}>Don't Have an Account ?</small> <Link to="/register" className=' underline text-green-600'>Please SignUp</Link></p>
+            <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
+                <h1 className='text-left text-4xl font-bold text-slate-500 my-5'>Login</h1>
+                <div className="card w-full bg-slate-300">
+                    <div className="card-body" >
+                        <form onSubmit={handleLogIn}>
+                            <input name="email" type="email" placeholder="email" className="input w-full " required />
+                            <input name="password" type="password" placeholder="password" className="input mt-2 w-full" required />
+                            <input className="mt-3 w-full btn btn-primary" type="submit" value="LogIn" required />
+                            {
+                                error && <p className='text-red-500 font-semibold mt-2'>Error: {error}</p>
+                            }
+                        </form>
+                        <button onClick={handleGoogleSignIn} className="btn btn-active btn-accent"><img src="https://img.icons8.com/color/30/undefined/google-logo.png" /> <span className='text-white'> Google</span></button>
+                        <button onClick={handleGithubSignIn} className='btn' type="submit"><img src="https://img.icons8.com/arcade/30/null/github.png" /> Github</button>
+                        <p className='mt-1'><small className='font-semibold' style={{ fontSize: "14px" }}>Don't Have an Account ?</small> <Link to="/register" className=' underline text-green-600'>Please SignUp</Link></p>
+                    </div>
                 </div>
             </div>
-      </div>
         </div>
     );
 };

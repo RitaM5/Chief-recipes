@@ -8,7 +8,8 @@ const ChefCard = ({ chef }) => {
     const { id, picture, name, years_of_experience, num_recipes, likes, rating, recipes } = chef;
     return (
        
-            <div className="card w-full bg-blue-100 shadow-xl">
+            <div className="card w-full bg-blue-100 shadow-xl" data-aos="fade-up"
+            data-aos-duration="1000">
                 <div className="px-10 pt-10 mx-auto">
                     <LazyLoadImage
                         className="rounded-full"

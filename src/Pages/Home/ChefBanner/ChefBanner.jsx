@@ -9,7 +9,7 @@ const ChefBanner = ({ recipeDetails }) => {
         <div className='bg-gray-800'>
             <div className=' my-container h-full'>
                 <div className='lg:flex lg:justify-around lg:items-center lg:gap-28 md:col-auto sm:col-auto ms-14'>
-                    <div className='w-full'>
+                    <div className='w-full' data-aos="fade-right">
                         <LazyLoadImage
                             className="object-cover banner-img mt-6 w-80 "
                             alt={banner_img}
@@ -17,7 +17,7 @@ const ChefBanner = ({ recipeDetails }) => {
                             src={banner_img}
                         />
                     </div>
-                    <div className='space-y-3 lg:mt-20 mt-8 lg:mr-28'>
+                    <div className='space-y-3 lg:mt-20 mt-8 lg:mr-28' data-aos="fade-left">
                         <p className='text-[#1A1919] font-semibold text-2xl space-y-4'>
                             <span className='text-3xl text-white'>This is</span>
                             <span className='text-rose-600 font-semibold text-4xl'> {name}</span>

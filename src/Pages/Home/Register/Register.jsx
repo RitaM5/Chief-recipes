@@ -33,6 +33,7 @@ const Register = () => {
     return (
         <div className='my-16 my-container'>
             <div className='lg:w-96 md:w-96 sm:w-full mx-auto'>
+            <h1 className='text-left text-4xl font-bold text-blue-400 my-6'>SignUp</h1>
                 <div className="card w-full bg-blue-200">
                     <form className="card-body" onSubmit={handleRegister}>
                         <input type="text" name="name" placeholder="name" className="input w-full" required />
